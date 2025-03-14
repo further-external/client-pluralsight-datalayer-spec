@@ -8,7 +8,8 @@ window.appEventData = window.appEventData || [];
 appEventData.push({
   "event": "Checkout Step Encountered",
     "eventDetails": {
-        "checkoutStep": "<checkoutStep>"
+        "checkoutStep": "<checkoutStep>",
+        "country":"<country>",
         "paymentMethod":"<paymentMethod>"
     },
     "product": [
@@ -38,6 +39,7 @@ appEventData.push({
 |Path|Type|Description|Example|Pattern|Min Length|Max Length|Minimum|Maximum|Multiple Of|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 |eventDetails.checkoutStep|string|Describes a discrete step in the checkout flow. |Cart Review, Billing Info, Shipping Info, Order Review|||||||
+|eventDetails.country|string|String set to the user selected country value within the account details step|United States, India, Ireland|||||||
 |eventDetails.paymentMethod|string|Describes the payment method selected at the time of checkout |credit card Paypal, ACH direct Debit||||||
 |product[n].productInfo.billingCycle|string|String set to the user selected billing cycle selection within the b2b cart. \(B2B ONLY\)|Quarterly, Yearly|||||||
 |product[n].productInfo.class|string|String representation of the class of the product within the shopping cart. This is being calculated off of the|b2b, b2c|||||||
