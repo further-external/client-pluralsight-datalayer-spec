@@ -7,9 +7,9 @@
 window.appEventData = window.appEventData || [];
 appEventData.push({
   "event": "Checkout Step Encountered",
-    "checkoutMethod": "<checkoutMethod>",
     "eventDetails": {
         "checkoutStep": "<checkoutStep>"
+        "paymentMethod":"<paymentMethod>"
     },
     "product": [
         {
@@ -37,8 +37,8 @@ appEventData.push({
 
 |Path|Type|Description|Example|Pattern|Min Length|Max Length|Minimum|Maximum|Multiple Of|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-|checkoutMethod|string|The checkout method associated with checkout activity.||||||||
 |eventDetails.checkoutStep|string|Describes a discrete step in the checkout flow. |Cart Review, Billing Info, Shipping Info, Order Review|||||||
+|eventDetails.paymentMethod|string|Describes the payment method selected at the time of checkout |credit card Paypal, ACH direct Debit||||||
 |product[n].productInfo.billingCycle|string|String set to the user selected billing cycle selection within the b2b cart. \(B2B ONLY\)|Quarterly, Yearly|||||||
 |product[n].productInfo.class|string|String representation of the class of the product within the shopping cart. This is being calculated off of the|b2b, b2c|||||||
 |product[n].productInfo.duration|string|String representation of the billing duration of the product within the shopping cart|annual, monthly|||||||
