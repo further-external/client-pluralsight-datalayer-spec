@@ -8,6 +8,7 @@ window.appEventData = window.appEventData || [];
 appEventData.push({
   "event": "Checkout Complete",
     "transaction": {
+        "country":"<country>",
         "currency": "<currency>",
         "invoiceID": "<invoiceID>",
         "item": [
@@ -29,6 +30,7 @@ appEventData.push({
                 }
             }
         ],
+        "paymentMethod":"<paymentMethod>",
         "orderTotal": "<orderTotal>",
         "subscriptionID": "<subscriptionID>",
         "transactionID": "<transactionID>"
@@ -40,6 +42,7 @@ appEventData.push({
 
 |Path|Type|Description|Example|Pattern|Min Length|Max Length|Minimum|Maximum|Multiple Of|
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+|transaction.country|string|String set to the user selected country value within the account details step|United States, India, Ireland|||||||
 |transaction.currency|string|Currency of the transaction. ISO 4217 \(3 character alpha\), uppercase|USD, CAD, GBP, CHF|||||||
 |transaction.invoiceID|string|String set to the invoiceID that is created during the digital cart checkout|8a8aa38094df9b9a0194e0e624561594|||||||
 |transaction.item[n].productInfo.billingCycle|string|String set to the user selected billing cycle selection within the b2b cart. \(B2B ONLY\)|String set to the user selected billing cycle selection within the b2b cart. \(B2B ONLY\)|||||||
@@ -55,6 +58,7 @@ appEventData.push({
 |transaction.item[n].productInfo.sellingPrice|string|String representation of the price paid after coupons or discounts. Positive. Up to two decimal places for cents. No currency symbol.|200, 29.99, 50, 0|||||||
 |transaction.item[n].productInfo.sku|string|This is referenced as the legacy\_product\_sku in the product catalog|SECURITY-PLUS-CL, AI-PLUS, IND-EVERYTHING|||||||
 |transaction.item[n].productInfo.trial|string|String set to yes or no to define if a product is being purchased as a trial or not|"true", "false"|||||||
+|transaction.paymentMethod|string|Describes the payment method selected at the time of checkout|Credit Card,paypal,ACH Direct debit|||||||
 |transaction.orderTotal|string|The value of total services purchased|200, 29.99, 50, 0|||||||
 |transaction.subscriptionID|string|String set to the subscriptionID that is created during the digital cart checkout|b8307d2582594df9b7a4e0e622dc0109|||||||
 |transaction.transactionID|string|Unique identifier of the transaction. Max Length 100. Used as a key for upload of post transaction data. |123e4567-e89b-12d3-a456-426614174000|^[a-zA-Z0-9]{6,100}$|6|100||||
